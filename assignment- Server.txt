@@ -1,0 +1,16 @@
+public class ServerLoad {
+    public static void main(String[] args) {
+        int server = 2;
+        int[] load = {10, 60, 50, 15, 20};
+
+        for (int minute = 0; minute < load.length; minute++) {
+            if (load[minute] < 50) {
+                server = (int) Math.ceil((double) server / 2); // Reduce servers to N/2
+            } else {
+                server = 2 * server + 1; // Increase servers to 2N + 1
+            }
+        }
+
+        System.out.println(server);
+    }
+}
